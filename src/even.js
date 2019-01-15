@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getUserName } from '..';
+import { getUserName } from './index';
 import { getRandomInteger, printRules } from './help';
 
 const minNumber = 1;
@@ -14,23 +14,30 @@ const getQuestion = () => getRandomInteger(minNumber, maxNumber);
 const getAnswer = () => readlineSync.question('Your answer: ');
 
 const isCorrectAnswer = (question, answer) => {
-  const isEvenQuestion = isEven(question);
-  switch (answer) {
-    case 'yes':
-      return isEvenQuestion;
-    case 'no':
-      return !isEvenQuestion;
-    default:
-      return false;
-  }
+  
 };
 
 const checkAnswer = (question, answer) => {
-  const isCorrect = isCorrectAnswer(question, answer);
-  if (!isCorrect) {
-    console.log('\'yes\' is wrong answer ;(. Correct answer was \'no\'');
-  } else {
-    console.log('Correct!');
+  const correctMessage = 'Correct';
+  const wrongMessage = 'Wrong';
+  const wrongYesMessage = '\'yes\' is wrong answer ;(. Correct answer was \'no\'';
+  const wrongNoMessage = '\'no\' is wrong answer ;(. Correct answer was \'yes\'';
+  
+  const isEvenQuestion = isEven(question);
+
+  switch (answer) {
+    case 'yes':
+      if (!isEvenQuestion) {
+        return wrongYesMessage;
+      }
+      return correctMessage;
+    case 'no':
+      if (isEvenQuestion) {
+        return wrongNoMessage;
+      }
+      return correctMessage;
+    default:
+      return wrongMessage;
   }
 };
 
