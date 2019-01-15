@@ -1,12 +1,15 @@
 {
   "name": "kripton-brain-games",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "console game",
+  "keywords": [
+    "hexlet",
+    "console game"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
-   },
-   "files": [
+  },
+  "files": [
     "dist"
   ],
   "scripts": {
@@ -14,12 +17,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build"
   },
-  "author": "",
+  "author": "Mikhail Shardin",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.2.3"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }
