@@ -13,44 +13,53 @@ const getQuestion = () => getRandomInteger(minNumber, maxNumber);
 
 const getAnswer = () => readlineSync.question('Your answer: ');
 
-const isCorrectAnswer = (question, answer) => {
-  
-};
-
 const checkAnswer = (question, answer) => {
   const correctMessage = 'Correct';
   const wrongMessage = 'Wrong';
   const wrongYesMessage = '\'yes\' is wrong answer ;(. Correct answer was \'no\'';
   const wrongNoMessage = '\'no\' is wrong answer ;(. Correct answer was \'yes\'';
-  
+
   const isEvenQuestion = isEven(question);
 
   switch (answer) {
     case 'yes':
       if (!isEvenQuestion) {
-        return wrongYesMessage;
+        console.log(wrongYesMessage);
+        return false;
       }
-      return correctMessage;
+      console.log(correctMessage);
+      return true;
     case 'no':
       if (isEvenQuestion) {
-        return wrongNoMessage;
+        console.log(wrongNoMessage);
+        return false;
       }
-      return correctMessage;
+      console.log(correctMessage);
+      return true;
     default:
-      return wrongMessage;
+      console.log(wrongMessage);
+      return false;
   }
 };
 
 export default () => {
   console.log('Welcome to the Brain Games!');
-  printRules(rules);
+  printRules(`${rules}\n`);
   const userName = getUserName();
-  const question = getQuestion();
-  console.log(`Question: ${question}`);
-  const answer = getAnswer();
-  checkAnswer(question, answer);
+  let score = 0;
+  while (score < maxQuestionsNumber && score > 0) {
+    const question = getQuestion();
+    console.log(`Question: ${question}`);
+    const answer = getAnswer();
+    if (checkAnswer(question, answer)) {
+      score += 1;
+    } else {
+      score = -1;
+      console.log(`Let's try again, ${userName}!`);
+    }
+  }
+
+  if (score === maxQuestionsNumber) {
+    console.log(`Congratulations, ${userName}!`);
+  }
 };
-
-
-/*
-const questionNumber = */
