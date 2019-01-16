@@ -10,7 +10,12 @@ const askQuestion = () => {
   return question;
 };
 
-const isEven = number => number % 2 === 0;
+const isEven = (number) => {
+  if (number % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
+};
 
 export default () => {
   play(description, askQuestion, isEven);
