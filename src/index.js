@@ -22,13 +22,13 @@ export const play = (description, askQuestion, calcAnswer) => {
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = calcAnswer(question);
 
-    if (correctAnswer === userAnswer) {
+    if (correctAnswer.toString() === userAnswer) {
       console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
-
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-    console.log(`Let's try again, ${userName}!`);
-    return;
   }
 
   console.log(`Congratulations, ${userName}!`);
