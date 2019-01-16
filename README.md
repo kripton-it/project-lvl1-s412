@@ -13,3 +13,7 @@
 **Brain-even game example**
 
 [![asciicast](https://asciinema.org/a/JH5OGt5rjkREJ5VeCo3iYTKO3.svg)](https://asciinema.org/a/JH5OGt5rjkREJ5VeCo3iYTKO3)
+
+**Brain-calc game example**
+
+[![asciicast](https://asciinema.org/a/xXNCZ0XfWS4o33scOOCdtoVRK.svg)](https://asciinema.org/a/xXNCZ0XfWS4o33scOOCdtoVRK)

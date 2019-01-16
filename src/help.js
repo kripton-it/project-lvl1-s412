@@ -1,5 +1,5 @@
 export const minNumber = 1;
-export const maxNumber = 200;
+export const maxNumber = 20;
 export const maxQuestionsNumber = 3;
 
 export const getRandomInteger = (min, max) => {
