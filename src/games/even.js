@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-import { getUserName } from './index';
-import getRandomInteger from './help';
+import { getUserName } from '../index';
+import getRandomInteger from '../help';
 
 const minNumber = 1;
 const maxNumber = 200;
