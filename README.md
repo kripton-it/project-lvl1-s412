@@ -5,3 +5,11 @@
 <a href="https://codeclimate.com/github/kripton-it/project-lvl1-s412/test_coverage"><img src="https://api.codeclimate.com/v1/badges/67c1cdcda050d6305964/test_coverage" /></a>
 
 [![Build Status](https://travis-ci.org/kripton-it/project-lvl1-s412.svg?branch=master)](https://travis-ci.org/kripton-it/project-lvl1-s412)
+
+**How to install**
+
+[![asciicast](https://asciinema.org/a/WKUvJWHHuf29V26zJXjaqF0gT.svg)](https://asciinema.org/a/WKUvJWHHuf29V26zJXjaqF0gT)
+
+**Brain-even game example**
+
+[![asciicast](https://asciinema.org/a/JH5OGt5rjkREJ5VeCo3iYTKO3.svg)](https://asciinema.org/a/JH5OGt5rjkREJ5VeCo3iYTKO3)
