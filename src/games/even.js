@@ -1,4 +1,3 @@
-// import readlineSync from 'readline-sync';
 import { play } from '../index';
 import { getRandomInteger } from '../help';
 
