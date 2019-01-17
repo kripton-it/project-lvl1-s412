@@ -1,5 +1,5 @@
 import { play } from '../index';
-import { getRandomInteger } from '../help';
+import { getRandomInteger } from '../utils';
 
 const minNumber = 1;
 const maxNumber = 20;

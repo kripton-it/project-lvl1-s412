@@ -3,7 +3,6 @@ import getRandomInteger from '../utils';
 
 const minNumber = 1;
 const maxNumber = 20;
-
 const description = 'What is the result of the expression?';
 
 const getAnswer = (a, b, operation) => {
