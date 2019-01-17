@@ -19,7 +19,7 @@ export const play = (description, askQuestion) => {
 
   for (let score = 0; score < maxQuestionsNumber; score += 1) {
     const question = askQuestion();
-    console.log(`Question: ${question}`);
+    console.log(`Question: ${question.string}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (question.answer === userAnswer) {
