@@ -12,20 +12,20 @@ export const greeting = () => {
   getUserName();
 };
 
-export const play = (description, askQuestion, calcAnswer) => {
+export const play = (description, askQuestion) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${description}\n`);
   const userName = getUserName();
 
   for (let score = 0; score < maxQuestionsNumber; score += 1) {
     const question = askQuestion();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = calcAnswer(question);
 
-    if (correctAnswer.toString() === userAnswer) {
+    if (question.answer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${question.answer}'`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
