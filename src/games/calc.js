@@ -22,26 +22,30 @@ const calcAnswer = (a, b, operation) => {
 const askQuestion = () => {
   const firstOperand = getRandomInteger(minNumber, maxNumber);
   const secondOperand = getRandomInteger(minNumber, maxNumber);
-  let operation = '';
   const operationNumber = getRandomInteger(1, 3);
+  let generatedQuestion;
+  let correctAnswer;
 
   switch (operationNumber) {
     case 1:
-      operation = '+';
+      generatedQuestion = `${firstOperand} + ${secondOperand}`;
+      correctAnswer = calcAnswer(firstOperand, secondOperand, '+').toString();
       break;
     case 2:
-      operation = '-';
+      generatedQuestion = `${firstOperand} - ${secondOperand}`;
+      correctAnswer = calcAnswer(firstOperand, secondOperand, '-').toString();
       break;
     case 3:
-      operation = '*';
+      generatedQuestion = `${firstOperand} * ${secondOperand}`;
+      correctAnswer = calcAnswer(firstOperand, secondOperand, '*').toString();
       break;
     default:
       break;
   }
 
   return {
-    string: `${firstOperand} ${operation} ${secondOperand}`,
-    answer: calcAnswer(firstOperand, secondOperand, operation).toString(),
+    question: generatedQuestion,
+    answer: correctAnswer,
   };
 };
 

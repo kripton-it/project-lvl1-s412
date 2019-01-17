@@ -8,12 +8,7 @@ const description = 'Answer "yes" if number even otherwise answer "no"';
 
 const isEven = number => number % 2 === 0;
 
-const calcAnswer = (number) => {
-  if (isEven(number)) {
-    return 'yes';
-  }
-  return 'no';
-};
+const calcAnswer = number => isEven(number) ? 'yes' : 'no';
 
 const askQuestion = () => {
   const question = getRandomInteger(minNumber, maxNumber);
