@@ -17,3 +17,7 @@
 **Brain-calc game example**
 
 [![asciicast](https://asciinema.org/a/xXNCZ0XfWS4o33scOOCdtoVRK.svg)](https://asciinema.org/a/xXNCZ0XfWS4o33scOOCdtoVRK)
+
+**Brain-gcd game example**
+
+[![asciicast](https://asciinema.org/a/4AAw3v3CgNGZuYLbn8G50Kt0R.svg)](https://asciinema.org/a/4AAw3v3CgNGZuYLbn8G50Kt0R)
