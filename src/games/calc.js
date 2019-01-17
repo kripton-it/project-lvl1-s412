@@ -1,12 +1,12 @@
 import { play } from '../index';
-import { getRandomInteger } from '../help';
+import getRandomInteger from '../utils';
 
 const minNumber = 1;
 const maxNumber = 20;
 
 const description = 'What is the result of the expression?';
 
-const calcAnswer = (a, b, operation) => {
+const getAnswer = (a, b, operation) => {
   switch (operation) {
     case '+':
       return a + b;
@@ -19,7 +19,7 @@ const calcAnswer = (a, b, operation) => {
   }
 };
 
-const askQuestion = () => {
+const getGameData = () => {
   const firstOperand = getRandomInteger(minNumber, maxNumber);
   const secondOperand = getRandomInteger(minNumber, maxNumber);
   const operationNumber = getRandomInteger(1, 3);
@@ -29,15 +29,15 @@ const askQuestion = () => {
   switch (operationNumber) {
     case 1:
       generatedQuestion = `${firstOperand} + ${secondOperand}`;
-      correctAnswer = calcAnswer(firstOperand, secondOperand, '+').toString();
+      correctAnswer = getAnswer(firstOperand, secondOperand, '+').toString();
       break;
     case 2:
       generatedQuestion = `${firstOperand} - ${secondOperand}`;
-      correctAnswer = calcAnswer(firstOperand, secondOperand, '-').toString();
+      correctAnswer = getAnswer(firstOperand, secondOperand, '-').toString();
       break;
     case 3:
       generatedQuestion = `${firstOperand} * ${secondOperand}`;
-      correctAnswer = calcAnswer(firstOperand, secondOperand, '*').toString();
+      correctAnswer = getAnswer(firstOperand, secondOperand, '*').toString();
       break;
     default:
       break;
@@ -50,5 +50,5 @@ const askQuestion = () => {
 };
 
 export default () => {
-  play(description, askQuestion);
+  play(description, getGameData);
 };
