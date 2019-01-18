@@ -9,10 +9,7 @@ const getGameData = () => {
   const firstOperand = getRandomInteger(minNumber, maxNumber);
   const secondOperand = getRandomInteger(minNumber, maxNumber);
   const operationNumber = getRandomInteger(1, 3);
-  /*
-    Не совсем понял про константы - если я эти значения вычисляю в ветках switch,
-    мне нужны не константы, а переменные
-  */
+  
   let question;
   let answer;
 
