@@ -1,14 +1,9 @@
 import readlineSync from 'readline-sync';
+import getUserName from './name';
 
 const maxQuestionsNumber = 3;
 
-export const getUserName = () => {
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!\n`);
-  return userName;
-};
-
-export const play = (description, getGameData) => {
+export default (description, getGameData) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${description}\n`);
   const userName = getUserName();

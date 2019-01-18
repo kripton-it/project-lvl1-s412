@@ -1,4 +1,4 @@
-import { play } from '../index';
+import play from '..';
 import getRandomInteger from '../utils';
 
 const minNumber = 1;
@@ -9,7 +9,7 @@ const getGameData = () => {
   const firstOperand = getRandomInteger(minNumber, maxNumber);
   const secondOperand = getRandomInteger(minNumber, maxNumber);
   const operationNumber = getRandomInteger(1, 3);
-  
+
   let question;
   let answer;
 

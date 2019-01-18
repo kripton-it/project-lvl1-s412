@@ -1,4 +1,4 @@
-import { play } from '../index';
+import play from '..';
 import getRandomInteger from '../utils';
 
 const minNumber = 10;
