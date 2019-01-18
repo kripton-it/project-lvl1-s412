@@ -10,7 +10,12 @@ const description = 'What number is missing in the progression?';
 
 const getGameData = () => {
   const firstNumber = getRandomInteger(minNumber, maxNumber);
-  const step = getRandomInteger(minStep, maxStep);
+  let step = getRandomInteger(minStep, maxStep);
+
+  while (step === 0) {
+    step = getRandomInteger(minStep, maxStep);
+  }
+
   const missingPosition = getRandomInteger(1, progressionLength);
 
   let question = '';
@@ -20,7 +25,7 @@ const getGameData = () => {
     const currentNumber = firstNumber + i * step;
     if (i + 1 === missingPosition) {
       question += '.. ';
-      answer = currentNumber;
+      answer = currentNumber.toString();
     } else {
       question += `${currentNumber} `;
     }
