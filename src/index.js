@@ -15,14 +15,14 @@ export const play = (description, getGameData) => {
 
   for (let score = 0; score < maxQuestionsNumber; score += 1) {
     const gameData = getGameData();
-    const { question, answer: correctAnswer } = gameData;
+    const { question, answer } = gameData;
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (correctAnswer === userAnswer) {
+    if (answer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

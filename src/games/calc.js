@@ -5,47 +5,35 @@ const minNumber = 1;
 const maxNumber = 20;
 const description = 'What is the result of the expression?';
 
-const getAnswer = (a, b, operation) => {
-  switch (operation) {
-    case '+':
-      return a + b;
-    case '-':
-      return a - b;
-    case '*':
-      return a * b;
-    default:
-      return NaN;
-  }
-};
-
 const getGameData = () => {
   const firstOperand = getRandomInteger(minNumber, maxNumber);
   const secondOperand = getRandomInteger(minNumber, maxNumber);
   const operationNumber = getRandomInteger(1, 3);
-  let generatedQuestion;
-  let correctAnswer;
+  /*
+    Не совсем понял про константы - если я эти значения вычисляю в ветках switch,
+    мне нужны не константы, а переменные
+  */
+  let question;
+  let answer;
 
   switch (operationNumber) {
     case 1:
-      generatedQuestion = `${firstOperand} + ${secondOperand}`;
-      correctAnswer = getAnswer(firstOperand, secondOperand, '+').toString();
+      question = `${firstOperand} + ${secondOperand}`;
+      answer = (firstOperand + secondOperand).toString();
       break;
     case 2:
-      generatedQuestion = `${firstOperand} - ${secondOperand}`;
-      correctAnswer = getAnswer(firstOperand, secondOperand, '-').toString();
+      question = `${firstOperand} - ${secondOperand}`;
+      answer = (firstOperand - secondOperand).toString();
       break;
     case 3:
-      generatedQuestion = `${firstOperand} * ${secondOperand}`;
-      correctAnswer = getAnswer(firstOperand, secondOperand, '*').toString();
+      question = `${firstOperand} * ${secondOperand}`;
+      answer = (firstOperand * secondOperand).toString();
       break;
     default:
       break;
   }
 
-  return {
-    question: generatedQuestion,
-    answer: correctAnswer,
-  };
+  return { question, answer };
 };
 
 export default () => {

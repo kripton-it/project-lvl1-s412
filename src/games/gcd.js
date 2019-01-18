@@ -18,13 +18,10 @@ const calcGCD = (a, b) => {
 const getGameData = () => {
   const firstNumber = getRandomInteger(minNumber, maxNumber);
   const secondNumber = getRandomInteger(minNumber, maxNumber);
-  const generatedQuestion = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = calcGCD(firstNumber, secondNumber).toString();
+  const question = `${firstNumber} ${secondNumber}`;
+  const answer = calcGCD(firstNumber, secondNumber).toString();
 
-  return {
-    question: generatedQuestion,
-    answer: correctAnswer,
-  };
+  return { question, answer };
 };
 
 export default () => {
